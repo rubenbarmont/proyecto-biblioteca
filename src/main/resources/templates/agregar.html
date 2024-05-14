@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Crear Prestamo</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}" />
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+	<h1>Crear Prestamo</h1>
+	<a th:href="@{/}">Regresar</a>
+	<br />
+	<form th:action="@{/guardar}" method="post"  >		
+<!--		<input type="hidden" name="id" th:value="${id}" />-->
+		<label for="isbn">Isbn</label>
+		<input type="text" name="isbn" id="isbn" th:value="${isbn}" />	
+<!-- th:field="*{isbn}"	th:value="${isbn}"	 -->
+		<br />
+		<label for="identificacionUsuario">Identificación Usuario</label>
+		<input type="text" name="identificacionUsuario" id="identificacionUsuario" th:value="${identificacionUsuario}" />
+<!--	th:field="*{identificacionUsuario}" 	-->
+		<br />
+		<label for="tipoUsuario">Tipo Usuario</label>
+		<input type="text" name="tipoUsuario" id="tipoUsuario" th:value="${tipoUsuario}" />
+<!--th:field="*{tipoUsuario}"		-->
+		<br />
+		<input type="submit" name="guardar" value="Guardar" />
+	</form>
+</body>
+
+</html>
